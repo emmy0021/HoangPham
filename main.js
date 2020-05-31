@@ -1,3 +1,4 @@
+
 var menuTxt = document.getElementsByClassName('txt')[0];
 
 var buttons = document.getElementsByClassName('button');
@@ -20,64 +21,56 @@ menuBtn.addEventListener('click', function (e) {
     showBorder(menuBtn);
     IO = !IO;
 });
-nameBtn.addEventListener('click', function (e) {
-    showBorder(nameBtn);
-    changeBackground(nameBtn, "lightblue");
-    setTimeout(function () {
-        moveFromTo(mainContent, "20vh", "29vh");
-        hide(ul);
-        changeBackground(nameBtn, "lightblue");
-        showBorder(nameBtn);
+nameBtn.addEventListener('click', function () {
+    //console.log("click " + IO);
         
-    }, 350);
 
     setText(mainContent, "Main page");
     
-    if(IO){
+    if(!IO){
+        hide(ul);
+        showBorder(menuBtn);
+        clckTextColor(menuTxt);
         IO = !IO;
-        setText(mainContent, "Main page");
+        
+        moveFromTo(mainContent, "29vh", "20vh");
     }
     
 
 });
 
 aboutMeBtn.addEventListener('click', function (e) {
-    setTimeout(function () {
+
         moveFromTo(mainContent, "20vh", "29vh");
         hide(ul);
         showBorder(menuBtn);
         clckTextColor(menuTxt);
         setText(mainContent, aboutMeBtn.innerHTML);
         IO = !IO;
-    }, 350);
 
 });
 
 
 contactBtn.addEventListener('click', function (e) {
-    setTimeout(function () {
+
         moveFromTo(mainContent, "20vh", "29vh");
         hide(ul);
         showBorder(menuBtn);
         clckTextColor(menuTxt);
         setText(mainContent, contactBtn.innerHTML);
         IO = !IO;
-    }, 350);
 
 });
 
 
 
 
-function setText(e, txt) {
+function setText(e, txt = "") {
     //console.log("setting text to " + txt);
     //console.log(e);
-    if (!IO) {
-        e.innerHTML = txt + " page";
+    
+        e.innerHTML = txt;
 
-    } else {
-        e.innerHTML = "";
-    }
 }
 
 
