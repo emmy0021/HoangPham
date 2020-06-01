@@ -1,13 +1,14 @@
-:root{
+:root {
     --text-color: #333;
     --time: .15s;
 }
 
-body{
+body {
     overflow: hidden;
     font-family: 'Lato', sans-serif;
 }
-.nav{
+
+.nav {
     position: fixed;
     height: 20vh;
     top: 2.5px;
@@ -23,25 +24,32 @@ body{
     color: var(--text-color);
 }
 
-.menu{
+.menu {
     width: 80vw;
     height: 6vh;
     margin-top: 4%;
     left: 10vw;
     position: relative;
-   
+
+
+
 }
 
-.menu:hover + ul{
+.menu:active {
+    background: #F9F9F9;
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+.menu:hover+ul {
     transition: all .1s;
 }
 
 
-.button{
+.button {
     box-sizing: content-box;
 }
 
-.column{
+.column {
     width: 7%;
     height: 1.9px;
     background-color: var(--text-color);
@@ -51,14 +59,15 @@ body{
     margin-top: 2.6px;
     pointer-events: none;
 }
-.txt{
+
+.txt {
     position: relative;
     left: 5%;
     font-size: 14px;
     pointer-events: none;
 }
 
-ul{
+ul {
     top: 10px;
     color: var(--text-color);
     font-size: 13px;
@@ -72,8 +81,8 @@ ul{
     visibility: hidden;
 }
 
-li{
-    padding: 8px;
+li {
+    padding: 14px;
     display: flex;
     width: 71vw;
     left: -3%;
@@ -81,7 +90,7 @@ li{
     padding-left: 15%;
 }
 
-li::after{
+li::after {
     background-color: lightblue;
     height: 73%;
     top: 11%;
@@ -94,11 +103,11 @@ li::after{
     width: 0%;
 }
 
-li:hover::after{
+li:hover::after {
     width: 100%;
 }
 
-.mainContent{
+.mainContent {
     height: 80vh;
     width: 100vw;
     top: 20vh;
@@ -111,3 +120,87 @@ li:hover::after{
     padding: 2%;
 }
 
+.left {
+    float: left;
+}
+
+
+
+.profilePic {
+    position: absolute;
+    width: 75%;
+    height: auto;
+    border-radius: 50%;
+    top: 34%;
+    justify-content: center;
+    align-items: center;
+    left: 12.5%;
+}
+
+.description {
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    color: #EEEEEE;
+    bottom: 6%;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 16px;
+    text-align: center;
+    font-weight: normal;
+    width: 75%;
+    left: 12.5%;
+
+}
+
+
+@media only screen and (min-width: 600px) {
+
+    .menu {
+        visibility: hidden;
+        position: absolute;
+    }
+
+    .profilePic {
+        width: 75%;
+        height: auto;
+        top: 17%;
+    }
+
+    li {
+        visibility: visible;
+        display: table-cell;
+        width: max-content;
+        padding-left: auto;
+        position: relative;
+
+        clear: both;
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        float: right;
+
+        right: -58vw;
+        left: auto;
+        top: -38%;
+    }
+
+    ul {
+        top: -14px;
+    }
+
+    .nav {
+        text-align: left;
+    }
+
+    .name {
+        margin-left: 29px;
+        position: absolute;
+    }
+
+    .mainContent {
+        top: 12%;
+        height: 85vh;
+    }
+}
+}
